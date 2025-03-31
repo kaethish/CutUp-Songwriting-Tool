@@ -2,7 +2,6 @@
   import { wordBox, lyrics } from "$lib/store.svelte";
 
   let dragHighlightContainer = false;
-  // Tracks which word (by row and index) is being hovered as a drop target
   let dropTarget = null;
 
   function enterDrag() {
@@ -13,12 +12,10 @@
     dropTarget = null;
   }
 
-  // Drop the word at the end of the target row
   function wordDrop(e, targetRowIndex) {
     e.preventDefault();
     if (wordBox.current.wordDrag) {
       const { rowIndex: sourceRowIndex, wordIndex, word } = wordBox.current.wordDrag;
-      // Remove the word from its source (lyrics row or collection)
       if (sourceRowIndex !== undefined && lyrics.current.rows[sourceRowIndex]) {
         lyrics.current.rows[sourceRowIndex].words.splice(wordIndex, 1);
       } else {
@@ -30,7 +27,6 @@
     }
   }
 
-  // Drop the word at a specific position (before an existing word)
   function wordDropAtPoint(e, targetRowIndex, targetWordIndex) {
     e.preventDefault();
     e.stopPropagation();
@@ -47,13 +43,11 @@
     }
   }
 
-  // Delete word on right-click
   function deleteWord(e, rowIndex, wordIndex) {
     e.preventDefault();
     lyrics.current.rows[rowIndex].words.splice(wordIndex, 1);
   }
 
-  // When dragging starts, record the source row and word index along with the word text
   function dragging(e, rowIndex, wordIndex) {
     const draggedWord = {
       rowIndex,
@@ -64,15 +58,14 @@
     e.dataTransfer.setData("text/plain", draggedWord.word);
   }
 
-  // Update dropTarget when dragging over a word
+  
   function handleDragOver(e, i, j) {
     e.preventDefault();
     dropTarget = { i, j };
   }
 
-  // Clear dropTarget when leaving a word
+  
   function handleDragLeave(e, i, j) {
-    // Only clear if the current target matches the one being left
     if (dropTarget && dropTarget.i === i && dropTarget.j === j) {
       dropTarget = null;
     }
@@ -90,15 +83,10 @@
   function copy() {
     for (let i = 0; i < lyrics.current.rows.length; i++) {
       let tempStrArr = lyrics.current.rows[i].words;
-      // Join elements of tempStrArr into a string with spaces
       let joinedStr = tempStrArr.join(' ');
-      // Push the joined string into lyricsForCopy
       lyricsForCopy.push(joinedStr);
-      // Optionally, log the current state of lyricsForCopy
     }
-    // After the loop, join all strings in lyricsForCopy with newline characters
     let finalLyrics = lyricsForCopy.join('\n');
-    // Log the final combined string
     console.log(finalLyrics);
     navigator.clipboard.writeText(finalLyrics)
   }
@@ -146,7 +134,7 @@
   </div>
 
   <div class="controls">
-    <!-- Additional control elements can go here -->
+    
   </div>
 </div>
 
@@ -211,7 +199,7 @@
     border-radius: 2rem;
     position: relative;
   }
-  /* Highlight drop point with a pink vertical line before the word */
+  
   .word.drop-highlight::before {
     content: "";
     position: absolute;

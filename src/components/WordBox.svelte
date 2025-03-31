@@ -8,7 +8,6 @@
   onMount(async () => {
     const response = await fetch('/words_dictionary.json');
     const data = await response.json();
-    // The JSON is an object whose keys are words, so we extract the keys
     dictionaryWords = Object.keys(data);
   });
 
@@ -31,9 +30,9 @@
   }
 
   function deleteWord(e) {
-    e.preventDefault(); // Prevent the context menu from showing up
-    const index = parseInt(e.target.getAttribute('data-index')); // Get the index of the word
-    wordBox.current.collection.splice(index, 1); // Remove the word at that index
+    e.preventDefault(); 
+    const index = parseInt(e.target.getAttribute('data-index'));
+    wordBox.current.collection.splice(index, 1);
   }
 
   function generateRandomWords(count) {
@@ -46,9 +45,7 @@
 
   function shuffle() {
     for (let i = wordBox.current.collection.length - 1; i > 0; i--) {
-      // Generate a random index between 0 and i
       const j = Math.floor(Math.random() * (i + 1));
-      // Swap elements at indices i and j
       [wordBox.current.collection[i], wordBox.current.collection[j]] = [wordBox.current.collection[j], wordBox.current.collection[i]];
     }
   }
@@ -146,7 +143,7 @@
       color: #161616;
       padding: 1rem;
       border-radius: 2rem;
-      cursor: pointer; /* Optional: to indicate that the word is clickable */
+      cursor: pointer;
   }
 
   .word:hover {
