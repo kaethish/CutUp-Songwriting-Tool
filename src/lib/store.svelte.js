@@ -1,6 +1,7 @@
 import { PersistentState } from '@friendofsvelte/state';
 import { LocalStorage } from './storage.svelte';
 
+
 export const wordBox = new LocalStorage ("wordBox", {
     input: '',
     collection: [],
@@ -8,6 +9,8 @@ export const wordBox = new LocalStorage ("wordBox", {
 });
 
 export const wordDrag = $state("");
+export const help = $state(false);
+
 
 
 export const lyrics = new LocalStorage ("lyrics", {
