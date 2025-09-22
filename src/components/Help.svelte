@@ -19,7 +19,7 @@
         <ul>
             <li>Saving/Loading functionality, so you can work on multiple projects.</li>
             <li>Ability to type and add words in the lyrics section.</li>
-            <li>A better word collection for the random word generator.</li>
+            <li>Ability to add an empty row in the middle of your lyrics </li>
         </ul>
     </div>
 </div>
