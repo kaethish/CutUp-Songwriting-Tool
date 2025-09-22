@@ -25,6 +25,10 @@
     {/if}
 </section>
 
+<div class="mobile">
+    The Cut Up Board is available only on devices with resolutions 1366 x 768 and higher.
+</div>
+
 <style>
     .encapsulation {
         display: flex;
@@ -32,8 +36,13 @@
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
+        height: 90vh;
         /* flex-wrap:wrap-reverse; */
         /* max-width: fit-content; */
+
+        @media screen and (max-width: 1365px) {
+            display: none;
+        }
     }
 
     .composition {
@@ -48,7 +57,7 @@
     .focal {
         display: flex;
         align-items: center;
-        gap: 5rem;
+        gap: clamp(1rem, -5.154rem + 8.21vw, 5rem);
         margin-top: 3rem;
         flex-wrap: wrap;
     }
@@ -61,5 +70,15 @@
         user-select: none; 
     }
 
+    .mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-size: 2rem;
 
+        @media screen and (min-width: 1366px) {
+            display: none;
+        }
+    }
 </style>

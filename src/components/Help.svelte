@@ -37,14 +37,14 @@
         left: 50%;
         top: 57%;
         transform: translate(-50%, -50%);
-        width: 50rem;
-        height:35rem;
+        width: clamp(36rem, 14.462rem + 28.72vw, 50rem);
+        height:clamp(25rem, 9.615rem + 20.51vw, 35rem);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-        font-size: 1.75rem;
+        font-size: clamp(1rem, -0.154rem + 1.54vw, 1.75rem);
         backdrop-filter: blur(8px);
         z-index: 1000;
         transition: filter 0.5s ease-in;

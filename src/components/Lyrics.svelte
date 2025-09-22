@@ -132,18 +132,16 @@
     {/each}
     <div class="add-row" on:click={addRow}>Add Row</div>
   </div>
-
-  <div class="controls">
-    
-  </div>
 </div>
 
 
 <style>
   .copy {
-    margin-left: 7rem;
-    margin-top: -3.5rem;
-    font-size: 1.5rem;
+    margin-left: 7vw;
+    margin-top: -5.5vh;
+    font-size: clamp(1rem, 0.231rem + 1.03vw, 1.5rem);
+    width: clamp(1.75rem, -0.173rem + 2.56vw, 3rem);
+    height: auto;
     padding: 0.5rem;
   }
 
@@ -152,11 +150,15 @@
   }
 
   .encapsulation {
-    border: 2.5px solid #b2b2b2;
-    width: 50rem;
-    height: 42rem;
-    border-radius: 3rem;
-    overflow: scroll;
+      border: 2.5px solid #b2b2b2;
+      width: clamp(36rem, 14.462rem + 28.72vw, 50rem);
+      height: clamp(26rem, 1.385rem + 32.82vw, 42rem);
+      position: relative;
+      border-radius: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      overflow: hidden;
   }
   /* .encapsulation.dragHighlightContainer {
     border: 3px solid #FF74D5;
@@ -171,19 +173,19 @@
     display: flex;
     flex-wrap: wrap;
     min-height: 3rem;
-    position: relative;
+    /* position: relative; */
   }
 
   .lyrics-heading {
-    font-size: 3rem;
+    font-size: clamp(2rem, 0.462rem + 2.05vw, 3rem);
     margin-left: 3rem;
     margin-top: 1.5rem;
     color: #d40094;
-    padding-bottom: 3rem;
+    padding-bottom: clamp(2rem, 0.462rem + 2.05vw, 3rem);
   }
 
   .empty-row {
-    padding-top: 3rem;
+    padding-top: clamp(2rem, 0.462rem + 2.05vw, 3rem);
   }
   .words {
     display: flex;
@@ -191,13 +193,14 @@
   }
   .word {
     margin: 1rem 1rem 0 0;
-    font-size: 2rem;
+    font-size: clamp(1.25rem, 0.096rem + 1.54vw, 2rem);
     text-align: center;
     background-color: #F0F8FF;
     color: #161616;
     padding: 1rem;
-    border-radius: 2rem;
+    border-radius: clamp(1.5rem, 0.731rem + 1.03vw, 2rem);
     position: relative;
+    cursor: pointer;
   }
   
   .word.drop-highlight::before {
@@ -217,8 +220,9 @@
   .add-row {
     text-align: center;
     background-color: #F3F3F3;
-    font-size: 2.5rem;
+    font-size: clamp(1.75rem, 0.596rem + 1.54vw, 2.5rem);
     color: #161616;
     cursor: pointer;
+    
   }
 </style>

@@ -102,8 +102,8 @@
 <style>
   .encapsulation {
       border: 2.5px solid #b2b2b2;
-      width: 50rem;
-      height: 42rem;
+      width: clamp(36rem, 14.462rem + 28.72vw, 50rem);
+      height: clamp(26rem, 1.385rem + 32.82vw, 42rem);
       position: relative;
       border-radius: 3rem;
       display: flex;
@@ -111,12 +111,12 @@
       gap: 1rem;
       overflow: hidden;
   }
-.heading {
-  font-size: 3rem;
-    margin-left: 3rem;
-    margin-top: 1.5rem;
-    color: #d40094;
-}
+  .heading {
+      font-size: clamp(2rem, 0.462rem + 2.05vw, 3rem);
+      margin-left: 3rem;
+      margin-top: 1.5rem;
+      color: #d40094;
+  } 
   .word-box {
       display: flex;
       flex-wrap: wrap;
@@ -126,7 +126,7 @@
   }
 
   .words {
-      font-size: 2rem;
+      
       margin-top: 3rem;
       margin-left: 3rem;
       display: flex;
@@ -136,13 +136,14 @@
   }
 
   .word {
+      font-size: clamp(1.25rem, 0.096rem + 1.54vw, 2rem);
       margin-right: 1rem;
       text-align: center;
       margin-top: 1rem;
       background-color: #F0F8FF;
       color: #161616;
       padding: 1rem;
-      border-radius: 2rem;
+      border-radius: clamp(1.5rem, 0.731rem + 1.03vw, 2rem);
       cursor: pointer;
   }
 
@@ -159,7 +160,7 @@
       border-radius: 1rem;
       color: #F0F8FF;
       text-align: left;
-      font-size: 2rem;
+      font-size: clamp(1.25rem, 0.096rem + 1.54vw, 2rem);
       font-family: "Annie Use Your Telescope", cursive;
       font-weight: 400;
       font-style: normal;
@@ -174,10 +175,12 @@
       bottom: 1rem;
       left: 1rem;
       width: 100%;
-      font-size: 3rem;
+      font-size: clamp(2rem, 0.462rem + 2.05vw, 3rem);
       padding: 1rem 0;
       display: flex;
-      justify-items: center;
+      /* justify-content: center;
+      align-items: center; */
+      gap: clamp(1rem, -0.538rem + 2.05vw, 2rem);
   }
 
   .random-word-generator {
@@ -191,7 +194,7 @@
     padding-top: 0.75rem;
     padding: 1rem;
     border-radius: 1.5rem 0 0 1.5rem;
-    font-size: 2rem;
+    font-size: clamp(1rem, -0.538rem + 2.05vw, 2rem);
     text-align: center;
   }
   .number-of-words {
@@ -203,31 +206,33 @@
     padding-right: 1rem;
     border: 1px solid #F0F8FF;
     width: 3rem;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: clamp(1.25rem, -0.673rem + 2.56vw, 2.5rem);
     padding-top: 0.5rem;
     cursor: pointer;
   }
   
   .shuffle {
     cursor: pointer;
-    padding-left: 2rem;
+    /* padding-left: 2rem; */
     align-content: center;
   }
 
   .shuffle-icon {
-    width: 3rem;
+    width: clamp(1.75rem, -0.173rem + 2.56vw, 3rem);
     height: auto;
     padding-top: 1rem;
   }
 
   .delete {
     cursor: pointer;
-    padding-left: 2rem;
+    /* padding-left: 2rem; */
   }
 
   .delete-icon {
-    width: 3rem;
+    width: clamp(1.75rem, -0.173rem + 2.56vw, 3rem);
     height: auto;
     padding-top: 1rem;
     color: red;
