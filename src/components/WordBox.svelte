@@ -5,11 +5,23 @@
   let dictionaryWords = [];
 
 
+  // onMount(async () => {
+  //   const response = await fetch('/words_dictionary.json');
+  //   const data = await response.json();
+  //   dictionaryWords = Object.keys(data);
+  // });
+
   onMount(async () => {
-    const response = await fetch('/words_dictionary.json');
-    const data = await response.json();
-    dictionaryWords = Object.keys(data);
+    const response = await fetch('/words.txt');
+    const data = await response.text();
+    dictionaryWords = data
+      .split(/\r?\n/)
+      .map(word => word.trim())
+      .filter(word => word.length > 0);
+    console.log(dictionaryWords);
   });
+
+
 
   function addWordBox() {
     const newWord = {

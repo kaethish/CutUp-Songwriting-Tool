@@ -104,9 +104,7 @@
   </div>
   <div class="lyrics">
     {#each lyrics.current.rows as row, i}
-      
-
-
+    
       <div
         class="row {row.words.length === 0 ? 'empty-row' : ''}"
         on:drop={(e) => wordDrop(e, i)}
